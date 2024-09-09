@@ -8,35 +8,59 @@
     font-family: 'titulo-pixel';
     src: url(./font/titulo.TTF);
 }
-#portada-titulo{
+#titulo-contenedor {
     display: flex;
-    border: solid green 2px;
     flex-direction: column;
-    /*en este caso este no sirve, tiene que ser con text-align*/justify-content: center;
-    text-align: center; 
-    font-family: 'titulo-pixel';
+    justify-content: center; 
+    align-items: center; 
     height: 100vh;
+    width: 100vw; 
+    font-family: 'titulo-pixel';
+    color:antiquewhite;
+    text-shadow: 
+        2px 2px 0 #000, /* Borde en la parte inferior derecha */
+        -2px -2px 0 #000, /* Borde en la parte superior izquierda */
+        2px -2px 0 #000, /* Borde en la parte superior derecha */
+        -2px 2px 0 #000; 
+    text-align: center; 
+    background-image: url(https://sevilla.abc.es/Media/201404/03/aguirre-coche--644x362.jpg);
+    background-color: lightblue; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
 }
 
-#contenedor-start{
-    display:flex;
-    border: solid blue 2px;
+
+/* Estilo del botón de inicio */
+#contenedor-start button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 130px;
+    width: 130px;
+    border-radius: 80px;
+    font-size: 1rem; /* Ajusta el tamaño del texto del botón */
+    background-color: #f0f0f0; /* Cambia según el diseño deseado */
 }
-#instrucciones{
-    display: flex;
-    border: solid red 2px;
-    position: absolute;
+
+/* Contenedor de instrucciones */
+#instrucciones {
+    position: relative;
     bottom: 0; 
     left: 0; 
     width: 100%; 
-    text-align: center;
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.8); 
+}
    
+/* Estilo de la imagen dentro de instrucciones */
+#instrucciones img {
+    position: relative;
+    height: 200px;
+    width: 250px;
+    left: 10px;
 }
-#instrucciones img{
 
-    height: 20%;
-    width: 20%;
-}
 
 /*PANTALLA DE JUEGO*/
 
@@ -56,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: green 2px solid;
+    border: white 2px solid;
     height: 90vh;
     width: 150vh;
     pointer-events: none;
