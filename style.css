@@ -1,0 +1,96 @@
+*{
+    padding:0;
+    margin:0;
+
+    /*PORTADA*/
+}
+@font-face {
+    font-family: 'titulo-pixel';
+    src: url(./font/titulo.TTF);
+}
+#portada-titulo{
+    display: flex;
+    border: solid green 2px;
+    flex-direction: column;
+    /*en este caso este no sirve, tiene que ser con text-align*/justify-content: center;
+    text-align: center; 
+    font-family: 'titulo-pixel';
+    height: 100vh;
+}
+
+#contenedor-start{
+    display:flex;
+    border: solid blue 2px;
+}
+#instrucciones{
+    display: flex;
+    border: solid red 2px;
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    text-align: center;
+   
+}
+#instrucciones img{
+
+    height: 20%;
+    width: 20%;
+}
+
+/*PANTALLA DE JUEGO*/
+
+#contenedor-juego{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    background-color: rgb(185, 23, 23); 
+    position: relative;
+
+
+
+}
+#pantalla-juego{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: green 2px solid;
+    height: 90vh;
+    width: 150vh;
+    pointer-events: none;
+    position: absolute;
+    background-color: grey;
+
+
+}
+#contenedor-juego::before {
+    content: '☆\A☆\A☆'; /* Usar \A para salto de línea */
+    white-space: pre; /* Mantener los saltos de línea */
+    position: absolute;
+    font-size: 6rem; /* Tamaño de las estrellas */
+    color: white; /* Color de las estrellas */
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%); /* Centra verticalmente */
+}
+#contenedor-juego::after {
+    content: '☆\A☆\A☆'; /* Usar \A para salto de línea */
+    white-space: pre; /* Mantener los saltos de línea */
+    position: absolute;
+    font-size: 6rem; /* Tamaño de las estrellas */
+    color: white; /* Color de las estrellas */
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%); /* Centra verticalmente */
+}
+
+
+
+
+
+
+
+
+/*PANTALLA FINAL 1*/
