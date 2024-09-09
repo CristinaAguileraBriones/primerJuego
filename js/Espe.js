@@ -13,7 +13,7 @@ class Esperanza {
         this.espeNode = document.createElement("img")
         this.espeNode.src = "./img/cochePrueba.png"
         pantallaJuego.append(this.espeNode)
-
+        console.log(this.espeNode)
     }
 
     
