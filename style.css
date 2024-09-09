@@ -9,6 +9,7 @@
     src: url(./font/titulo.TTF);
 }
 #contenedor-principal {
+    
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -32,10 +33,17 @@
 }
 
 
+/*Ajuste título*/
+#contenedor-principal h1, h3{
+    position: relative;
+    top: 50px;
+}
 /* Estilo del botón de inicio */
-#contenedor-start button {
-    margin-top: 30px;
-    margin-bottom: 30px;
+#contenedor-principal button {
+    position: relative;
+    right: 250px;
+    margin-top: 150px;
+    margin-bottom: 35px;
     height: 130px;
     width: 130px;
     border-radius: 80px;
@@ -43,23 +51,19 @@
     background-color: #f0f0f0; /* Cambia según el diseño deseado */
 }
 
-/* Contenedor de instrucciones */
-#instrucciones {
+/*Ajuste de imagen*/
+#contenedor-principal img{
+    
     position: relative;
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    text-align: center; 
-     
-}
-   
-/* Estilo de la imagen dentro de instrucciones */
-#instrucciones img {
-    position: relative;
+    bottom: 180px;
     height: 200px;
     width: 250px;
-    left: 10px;
+    left: 350px;
+   
+
 }
+
+   
 
 
 /*PANTALLA DE JUEGO*/
@@ -70,7 +74,7 @@
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
     background-color: rgb(185, 23, 23); 
-    position: relative;
+    position: absolute;
 
 }
 #pantalla-juego{
@@ -81,7 +85,7 @@
     height: 90vh;
     width: 150vh;
     pointer-events: none;
-    position: absolute;
+    position: relative;
     background-color: grey;
 
 
@@ -120,7 +124,7 @@
 
 /*OCULTAR PANTALLAS AL INICIO*/
 
-#contenedor-juego, #pantalla-juego, #cartel-resultado{
+#contenedor-juego, #cartel-resultado{
 
     display: none;
 }
