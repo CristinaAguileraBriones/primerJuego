@@ -54,11 +54,32 @@
     right: 250px;
     margin-top: 150px;
     margin-bottom: 35px;
-    height: 130px;
-    width: 130px;
+    height: 200px;
+    width: 220px;
     border-radius: 80px;
     font-size: 1rem; /* Ajusta el tamaño del texto del botón */
-    background-color: #f0f0f0; /* Cambia según el diseño deseado */
+    background-image: url(./img/rana-granados-boton.png);
+    transform-origin: center; /* Cambia esto si el origen no es el centro */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+#contenedor-principal button:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del botón al 120% */
+}
+
+
+button h3{
+
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+    font-family: 'titulo-pixel';
+    color: rgb(110, 110, 219);
+    text-shadow: 
+        2px 2px 0 #000, /* Borde en la parte inferior derecha */
+        -2px -2px 0 #000, /* Borde en la parte superior izquierda */
+        2px -2px 0 #000, /* Borde en la parte superior derecha */
+        -2px 2px 0 #000; 
 }
 
 /*Ajuste de imagen*/
