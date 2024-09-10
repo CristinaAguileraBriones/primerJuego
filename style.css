@@ -83,10 +83,10 @@
     align-items: center;
     border: white 2px solid;
     height: 90vh;
-    width: 150vh;
+    width: 210vh;
     pointer-events: none;
     position: relative;
-    background-color: grey;
+    background-image: url(./img/carretera.png);
     overflow: hidden;
 
 
@@ -95,20 +95,20 @@
     content: '☆\A☆\A☆'; /* Usar \A para salto de línea */
     white-space: pre; /* Mantener los saltos de línea */
     position: absolute;
-    font-size: 6rem; /* Tamaño de las estrellas */
+    font-size: 4rem; /* Tamaño de las estrellas */
     color: white; /* Color de las estrellas */
     top: 50%;
-    left: 50px;
+    left: 1px;
     transform: translateY(-50%); /* Centra verticalmente */
 }
 #contenedor-juego::after {
     content: '☆\A☆\A☆'; /* Usar \A para salto de línea */
     white-space: pre; /* Mantener los saltos de línea */
     position: absolute;
-    font-size: 6rem; /* Tamaño de las estrellas */
+    font-size: 4rem; /* Tamaño de las estrellas */
     color: white; /* Color de las estrellas */
     top: 50%;
-    right: 50px;
+    right: 1px;
     transform: translateY(-50%); /* Centra verticalmente */
 }
 

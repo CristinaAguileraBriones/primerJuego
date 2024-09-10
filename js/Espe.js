@@ -4,8 +4,8 @@ class Espe {
 
         this.x = 50
         this.y = 20
-        this.h = 35
-        this.w = 80
+        this.h = 50
+        this.w = 180
 
         this.speedMovement = 20
         this.isMovingUp = true
@@ -13,7 +13,7 @@ class Espe {
 
         //crear Espe en DOM
         this.espeNode = document.createElement("img")
-        this.espeNode.src = "./img/cochePrueba.png"
+        this.espeNode.src = "./img/prototipo-esperanza(1).png"
         pantallaJuegoNode.append(this.espeNode)
         
         //ajustar tamaño
