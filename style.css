@@ -87,6 +87,7 @@
     pointer-events: none;
     position: relative;
     background-color: grey;
+    overflow: hidden;
 
 
 }

@@ -19,6 +19,8 @@
         let espe 
         let arrayAbuelos = []
         let arrayGuardiaCivil = []
+        let frecuenciaAbuelos = 1500
+        let frecuenciaGuardias = 2000
     
 
 
@@ -31,6 +33,7 @@
 
         espe = new Espe()
         
+        
        
 
         setInterval(() => {
@@ -42,9 +45,13 @@
         setInterval(()=>{
 
             anadirAbuelos()
-            anadirGuardias()
+            
            
-        }, 2000)
+        }, frecuenciaAbuelos)
+        setInterval(()=>{
+
+            anadirGuardias()
+        }, frecuenciaGuardias)
 
 
     }
@@ -60,10 +67,8 @@
 
             cadaGuardia.movimientoContinuoG()
         })
-
-       //arrayAbuelos.movimientoContinuo()
-      // arrayGuardiaCivil.movimientoContinuoG()
-
+        eliminarAbuelosFueraDePantalla()
+        eliminarGuardiasFueraDePantalla()
     }
 
     function anadirAbuelos () {
@@ -78,6 +83,34 @@
         let guardiaAnadido = new GuardiaCivil ()
         arrayGuardiaCivil.push(guardiaAnadido)
         
+    }
+
+    function eliminarAbuelosFueraDePantalla (){
+
+        if(arrayAbuelos.length===0){
+
+            return
+        }
+
+        if(arrayAbuelos[0].x + arrayAbuelos[0].w <= 0){
+            arrayAbuelos[0].abueloNode.remove()
+            arrayAbuelos.shift()
+            
+        }
+    }
+
+    function eliminarGuardiasFueraDePantalla(){
+
+        if(arrayGuardiaCivil.length===0){
+
+            return
+        }
+
+        if(arrayGuardiaCivil[0].x + arrayGuardiaCivil[0].w <= 0){
+            arrayGuardiaCivil[0].guardiaNode.remove()
+            arrayGuardiaCivil.shift()
+            
+        }
     }
 
     //LISTENERS

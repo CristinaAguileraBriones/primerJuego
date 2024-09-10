@@ -2,7 +2,7 @@ class Abuelo{
 
     constructor(){
 
-        this.x = 500
+        this.x = pantallaJuegoNode.offsetWidth
         this.y = 0
         this.w = 35
         this.h = 80
