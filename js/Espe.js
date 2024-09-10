@@ -8,6 +8,8 @@ class Espe {
         this.w = 80
 
         this.speedMovement = 20
+        this.isMovingUp = true
+        this.isMovingDown = true
 
         //crear Espe en DOM
         this.espeNode = document.createElement("img")
@@ -22,9 +24,10 @@ class Espe {
     }
 
         abajoPad(){
-            
-            this.y += this.speedMovement
-             this.espeNode.style.top = `${this.y}px`
+        
+            this.y+=this.speedMovement
+            this.espeNode.style.top = `${this.y}px`
+        
 
         }
 
@@ -32,7 +35,6 @@ class Espe {
 
             this.y -= this.speedMovement
             this.espeNode.style.top = `${this.y}px`
-
 
         }
     

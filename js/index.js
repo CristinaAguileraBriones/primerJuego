@@ -17,6 +17,8 @@
     // Objetos del juego
 
         let espe 
+        let arrayAbuelos = []
+        let arrayGuardiaCivil = []
     
 
 
@@ -26,17 +28,56 @@
         
         pantallaTituloJuegoNode.style.display = "none"
         contenedorJuegoNode.style.display = "flex"
+
         espe = new Espe()
+        
+       
+
         setInterval(() => {
+
             bucleJuego()
+            
         }, 1000/60);
+
+        setInterval(()=>{
+
+            anadirAbuelos()
+            anadirGuardias()
+           
+        }, 2000)
 
 
     }
 
     function bucleJuego (){
 
+        arrayAbuelos.forEach(cadaAbuelo =>{
 
+            cadaAbuelo.movimientoContinuo()
+        })
+
+        arrayGuardiaCivil.forEach(cadaGuardia =>{
+
+            cadaGuardia.movimientoContinuoG()
+        })
+
+       //arrayAbuelos.movimientoContinuo()
+      // arrayGuardiaCivil.movimientoContinuoG()
+
+    }
+
+    function anadirAbuelos () {
+
+        let abueloAnadido = new Abuelo ()
+        arrayAbuelos.push(abueloAnadido)
+        
+    }
+
+    function anadirGuardias () {
+
+        let guardiaAnadido = new GuardiaCivil ()
+        arrayGuardiaCivil.push(guardiaAnadido)
+        
     }
 
     //LISTENERS
@@ -44,7 +85,7 @@
     botonStartNode.addEventListener("click", comenzarJuego)
 
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
-        // verificar qué tecla fue presionada
+        // verificar qué tecla fue presionada //function event es algo interno del programa
         if (event.key === "ArrowUp") {
             console.log("arriba")
             espe.arribaPad();  // Mover abajo si se presiona la flecha izquierda
