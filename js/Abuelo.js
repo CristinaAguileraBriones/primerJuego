@@ -1,9 +1,9 @@
 class Abuelo{
 
-    constructor(){
+    constructor(posicionY){
 
         this.x = pantallaJuegoNode.offsetWidth
-        this.y = 0
+        this.y = posicionY
         this.w = 35
         this.h = 80
         this.speedMovementA = 3

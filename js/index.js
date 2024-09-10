@@ -19,10 +19,9 @@
         let espe 
         let arrayAbuelos = []
         let arrayGuardiaCivil = []
-        let frecuenciaAbuelos = 1500
-        let frecuenciaGuardias = 2000
+        let frecuenciaAbuelos = 2000
+        let frecuenciaGuardias = 3500
     
-
 
     //FUNCIONES GENERALES
 
@@ -42,17 +41,21 @@
             
         }, 1000/60);
 
+
         setInterval(()=>{
 
             anadirAbuelos()
             
            
         }, frecuenciaAbuelos)
-        setInterval(()=>{
 
-            anadirGuardias()
+        setInterval(()=>{     
+                
+           anadirGuardias()
+           
         }, frecuenciaGuardias)
 
+        
 
     }
 
@@ -72,16 +75,36 @@
     }
 
     function anadirAbuelos () {
-
-        let abueloAnadido = new Abuelo ()
-        arrayAbuelos.push(abueloAnadido)
+        let abuelosAleatorios = Math.floor(Math.random()* (90))
         
+        let abueloAnadido = new Abuelo (abuelosAleatorios)
+        arrayAbuelos.push(abueloAnadido)
+        //desfase de tiempo para que no salgan a la vez
+        setTimeout(()=>{
+        let abuelosAleatorios2 = Math.floor(Math.random()* (200-30) + 30)
+        let abueloAnadido2 = new Abuelo (abuelosAleatorios2)
+        arrayAbuelos.push(abueloAnadido2) 
+
+        }, 1000)
+               
     }
 
     function anadirGuardias () {
 
-        let guardiaAnadido = new GuardiaCivil ()
+        let guardiasAleatorios = Math.floor(Math.random()* (400-40) + 40)
+        
+        let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
         arrayGuardiaCivil.push(guardiaAnadido)
+
+        setTimeout(()=>{
+
+            let guardiasAleatorios = Math.floor(Math.random()* (600-30) + 30)
+            let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
+            arrayGuardiaCivil.push(guardiaAnadido)
+    
+            }, 1000)
+
+        
         
     }
 
