@@ -8,6 +8,16 @@
     font-family: 'titulo-pixel';
     src: url(./font/titulo.TTF);
 }
+
+@keyframes moverFondo {
+    from {
+        background-position-x: 100%;
+    }
+    to {
+        background-position-x: 0%;
+    }
+}
+
 #contenedor-principal {
     
     display: flex;
@@ -88,6 +98,7 @@
     position: relative;
     background-image: url(./img/carretera.png);
     overflow: hidden;
+    animation: moverFondo 5s linear infinite;
 
 
 }

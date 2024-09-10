@@ -37,6 +37,20 @@ class Espe {
             this.espeNode.style.top = `${this.y}px`
 
         }
+
+
+        acelerarPad(){
+
+            this.x-= this.speedMovement
+            this.espeNode.style.left = `${this.x}px`
+        }
+
+
+        atrasPad(){
+
+            this.x += this.speedMovement
+            this.espeNode.style.left = `${this.x}px`
+        }
     
 
 

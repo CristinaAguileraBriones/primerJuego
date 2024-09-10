@@ -4,13 +4,13 @@ class GuardiaCivil{
 
         this.x = pantallaJuegoNode.offsetWidth
         this.y = 50
-        this.w = 35
+        this.w = 60
         this.h = 80
 
         this.speedMovementG = 2
 
         this.guardiaNode = document.createElement("img")
-        this.guardiaNode.src = "./img/policiaPrueba.png"
+        this.guardiaNode.src = "./img/guardiaCivil(1).png"
         pantallaJuegoNode.append(this.guardiaNode)
 
         this.guardiaNode.style.width =  `${this.w}px`  //se interpola

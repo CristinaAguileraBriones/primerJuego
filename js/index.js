@@ -143,11 +143,17 @@
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
         if (event.key === "ArrowUp") {
-            console.log("arriba")
+            
             espe.arribaPad();  // Mover abajo si se presiona la flecha izquierda
         } else if (event.key === "ArrowDown") {
-            console.log("abajo")
+            
             espe.abajoPad();    // Mover arriba si se presiona la flecha derecha
+        }else if (event.key === "ArrowRight"){
+            console.log("atrás")
+            espe.atrasPad()
+        }else if (event.key=== "ArrowLeft"){
+            console.log("delante")
+            espe.acelerarPad()
         }
     
     })

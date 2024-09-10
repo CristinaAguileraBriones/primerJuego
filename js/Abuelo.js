@@ -4,12 +4,12 @@ class Abuelo{
 
         this.x = pantallaJuegoNode.offsetWidth
         this.y = posicionY
-        this.w = 35
+        this.w = 60
         this.h = 80
         this.speedMovementA = 3
 
         this.abueloNode = document.createElement("img")
-        this.abueloNode.src = "./img/abuelo.png"
+        this.abueloNode.src = "./img/abuelo(1).png"
         pantallaJuegoNode.append(this.abueloNode)
 
         this.abueloNode.style.width =  `${this.w}px`  //se interpola
