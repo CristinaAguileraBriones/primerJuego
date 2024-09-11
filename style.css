@@ -145,12 +145,6 @@ button h3{
 }
 
 
-
-
-
-
-
-
 /*PANTALLA FINAL 1*/
 
 
@@ -160,4 +154,9 @@ button h3{
 #contenedor-juego, #cartel-resultado{
 
     display: none;
+}
+
+.pausa{
+
+    animation-play-state:paused;
 }

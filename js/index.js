@@ -24,6 +24,7 @@
         let intervaloJuego = null
         let intervaloAbuelos = null
         let intervaloGuardias = null
+        let numColisionesAbuelos = 0
     
 
     //FUNCIONES GENERALES
@@ -75,6 +76,7 @@
         })
         eliminarAbuelosFueraDePantalla()
         eliminarGuardiasFueraDePantalla()
+        detectarColisionesAbuelos()
     }
 
     function anadirAbuelos () {
@@ -141,30 +143,28 @@
 
     function detectarColisionesAbuelos () {
 
-        let numColisionesAbuelos = 0
-        arrayAbuelos.forEach(cadaAbuelo=>{
-
+        for (let i = arrayAbuelos.length - 1; i >= 0; i--) {
+            let cadaAbuelo = arrayAbuelos[i];
+    
             if (
-
                 espe.x < cadaAbuelo.x + cadaAbuelo.w &&
                 espe.x + espe.w > cadaAbuelo.x &&
                 espe.y < cadaAbuelo.y + cadaAbuelo.h &&
                 espe.y + espe.h > cadaAbuelo.y
-
-              ) {
-
-                numColisionesAbuelos++
-                if(numColisionesAbuelos===3){
-
-                    gameOverTresAbuelos()
+            ) {
+                numColisionesAbuelos++;
+    
+                cadaAbuelo.abueloNode.remove();
+    
+                arrayAbuelos.splice(i, 1);
+    
+                if (numColisionesAbuelos >= 3) {
+                    gameOverTresAbuelos();
                 }
-
-                
-              }
-
-        })
-       
+            }
+        }
     }
+       
 
     function gameOverTresAbuelos (){
 
@@ -175,10 +175,11 @@
         espe = null
         arrayAbuelos = []
         arrayGuardiaCivil = []
+        pantallaJuegoNode.classList.add("pausa")
         pantallaJuegoNode = ""
 
-
-
+        contenedorJuegoNode.style.display = "none"
+        pantallaFinalNode.style.display = "flex"
 
     }
 
