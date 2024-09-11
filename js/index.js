@@ -16,11 +16,14 @@
     
     // Objetos del juego
 
-        let espe 
+        let espe = null
         let arrayAbuelos = []
         let arrayGuardiaCivil = []
         let frecuenciaAbuelos = 2000
         let frecuenciaGuardias = 3500
+        let intervaloJuego = null
+        let intervaloAbuelos = null
+        let intervaloGuardias = null
     
 
     //FUNCIONES GENERALES
@@ -35,21 +38,21 @@
         
        
 
-        setInterval(() => {
+       intervaloJuego = setInterval(() => {
 
             bucleJuego()
             
         }, 1000/60);
 
 
-        setInterval(()=>{
+        intervaloAbuelos = setInterval(()=>{
 
             anadirAbuelos()
             
            
         }, frecuenciaAbuelos)
 
-        setInterval(()=>{     
+      intervaloGuardias =  setInterval(()=>{     
                 
            anadirGuardias()
            
@@ -157,7 +160,6 @@
                 }
 
                 
-
               }
 
         })
@@ -165,6 +167,16 @@
     }
 
     function gameOverTresAbuelos (){
+
+        //limpieza de elementos
+        clearInterval(intervaloJuego)
+        clearInterval(intervaloAbuelos)
+        clearInterval(intervaloGuardias)
+        espe = null
+        arrayAbuelos = []
+        arrayGuardiaCivil = []
+        pantallaJuegoNode = ""
+
 
 
 
