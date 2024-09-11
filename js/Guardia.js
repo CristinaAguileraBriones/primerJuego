@@ -1,9 +1,9 @@
 class GuardiaCivil{
 
-    constructor(){
+    constructor(posicionY){
 
         this.x = pantallaJuegoNode.offsetWidth
-        this.y = 50
+        this.y = posicionY
         this.w = 60
         this.h = 80
 

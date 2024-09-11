@@ -21,35 +21,49 @@ class Espe {
         this.espeNode.style.position = "absolute"      //se interpola
         this.espeNode.style.left = `${this.x}px`
         this.espeNode.style.top = `${this.y}px`
+
+        setTimeout(() => {
+            // Obtener las dimensiones reales del elemento
+            this.h = this.espeNode.offsetHeight;
+            this.w = this.espeNode.offsetWidth;
+        }, 0);
     }
 
         abajoPad(){
-        
-            this.y+=this.speedMovement
-            this.espeNode.style.top = `${this.y}px`
-        
+            
+            if (this.y + this.espeNode.offsetHeight + this.speedMovement <= window.innerHeight) {
+                this.y += this.speedMovement;
+                this.espeNode.style.top = `${this.y}px`;
+            }
+            
 
         }
 
         arribaPad(){
 
-            this.y -= this.speedMovement
-            this.espeNode.style.top = `${this.y}px`
+            if (this.y - this.speedMovement >= 0) {
+                this.y -= this.speedMovement;
+                this.espeNode.style.top = `${this.y}px`
 
         }
+    }
 
 
         acelerarPad(){
 
-            this.x-= this.speedMovement
-            this.espeNode.style.left = `${this.x}px`
+            if (this.x - this.speedMovement >= 0) {
+                this.x -= this.speedMovement;
+                this.espeNode.style.left = `${this.x}px`;
+            }
         }
 
 
         atrasPad(){
 
-            this.x += this.speedMovement
-            this.espeNode.style.left = `${this.x}px`
+            if (this.x + this.espeNode.offsetWidth + this.speedMovement <= window.innerWidth) {
+                this.x += this.speedMovement;
+                this.espeNode.style.left = `${this.x}px`;
+            }
         }
     
 

@@ -75,13 +75,13 @@
     }
 
     function anadirAbuelos () {
-        let abuelosAleatorios = Math.floor(Math.random()* (90))
+        let abuelosAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
         
         let abueloAnadido = new Abuelo (abuelosAleatorios)
         arrayAbuelos.push(abueloAnadido)
         //desfase de tiempo para que no salgan a la vez
         setTimeout(()=>{
-        let abuelosAleatorios2 = Math.floor(Math.random()* (200-30) + 30)
+        let abuelosAleatorios2 = Math.floor(Math.random()* (window.innerHeight - 50))
         let abueloAnadido2 = new Abuelo (abuelosAleatorios2)
         arrayAbuelos.push(abueloAnadido2) 
 
@@ -91,14 +91,14 @@
 
     function anadirGuardias () {
 
-        let guardiasAleatorios = Math.floor(Math.random()* (400-40) + 40)
+        let guardiasAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
         
         let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
         arrayGuardiaCivil.push(guardiaAnadido)
 
         setTimeout(()=>{
 
-            let guardiasAleatorios = Math.floor(Math.random()* (600-30) + 30)
+            let guardiasAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
             let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
             arrayGuardiaCivil.push(guardiaAnadido)
     
@@ -134,6 +134,40 @@
             arrayGuardiaCivil.shift()
             
         }
+    }
+
+    function detectarColisionesAbuelos () {
+
+        let numColisionesAbuelos = 0
+        arrayAbuelos.forEach(cadaAbuelo=>{
+
+            if (
+
+                espe.x < cadaAbuelo.x + cadaAbuelo.w &&
+                espe.x + espe.w > cadaAbuelo.x &&
+                espe.y < cadaAbuelo.y + cadaAbuelo.h &&
+                espe.y + espe.h > cadaAbuelo.y
+
+              ) {
+
+                numColisionesAbuelos++
+                if(numColisionesAbuelos===3){
+
+                    gameOverTresAbuelos()
+                }
+
+                
+
+              }
+
+        })
+       
+    }
+
+    function gameOverTresAbuelos (){
+
+
+
     }
 
     //LISTENERS
