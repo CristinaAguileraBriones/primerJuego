@@ -90,8 +90,6 @@ button h3{
     height: 200px;
     width: 250px;
     left: 350px;
-   
-
 }
 
    
@@ -108,19 +106,51 @@ button h3{
     position: absolute;
 
 }
+#contenedor-juego h4 {
+
+    position: relative;
+    text-align: start;
+    justify-content: start;
+    bottom: 250px;
+    left: 600px;
+    font-family: 'titulo-pixel';
+    color:antiquewhite;
+    text-shadow: 
+        2px 2px 0 #000, /* Borde en la parte inferior derecha */
+        -2px -2px 0 #000, /* Borde en la parte superior izquierda */
+        2px -2px 0 #000, /* Borde en la parte superior derecha */
+        -2px 2px 0 #000; 
+
+}
+
+#contenedor-juego .vida1 img,
+#contenedor-juego .vida2 img,
+#contenedor-juego .vida3 img {
+    
+    position: relative;
+    bottom: 247px;
+    height: 15px; 
+    width: 15px;
+    left: 650px; 
+    gap: 5px;/*no funciona, ver por qué*/
+
+
+     
+}
+
 #pantalla-juego{
     
     justify-content: center;
     align-items: center;
     border: white 2px solid;
-    height: 90vh;
-    width: 210vh;
+    height: 85vh;
+    width: 215vh;
+    right: 55px;
     pointer-events: none;
     position: relative;
     background-image: url(./img/carretera.png);
     overflow: hidden;
     animation: moverFondo 5s linear infinite;
-
 
 }
 #contenedor-juego::before {
