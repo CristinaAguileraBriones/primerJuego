@@ -268,7 +268,7 @@
 
 /*OCULTAR PANTALLAS AL INICIO*/
 
-#contenedor-juego{
+#contenedor-juego, #cartel-resultado, #cartel-resultado2{
 
     display: none;
 }

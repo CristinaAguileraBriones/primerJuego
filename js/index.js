@@ -221,6 +221,7 @@
         //contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
+        pantallaFinal2Node.style.display = "none"
         pantallaFinalNode.style.display = "flex"
         vidaUnoNode.style.display = "flex"
         vidaTresNode.style.display = "flex"
@@ -241,6 +242,7 @@
         //contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
+        pantallaFinalNode.style.display = "none"
         pantallaFinal2Node.style.display = "flex"
         vidaUnoNode.style.display = "flex"
         vidaTresNode.style.display = "flex"
