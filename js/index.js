@@ -177,6 +177,7 @@
         arrayGuardiaCivil = []
         pantallaJuegoNode.classList.add("pausa")
         pantallaJuegoNode = ""
+        contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinalNode.style.display = "flex"

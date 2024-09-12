@@ -177,6 +177,28 @@ button h3{
 
 /*PANTALLA FINAL 1*/
 
+#cartel-resultado{
+    background-image: url(./img/ayuso.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cartel-resultado h1{
+    font-family:'titulo-pixel';
+ 
+}
+
+#volver-jugar button{
+
+    position: relative;
+    right: 250px;
+    margin-top: 150px;
+    margin-bottom: 35px;
+    height: 200px;
+    width: 220px;
+    border-radius: 80px;
+
+}
+
 
 
 /*OCULTAR PANTALLAS AL INICIO*/
