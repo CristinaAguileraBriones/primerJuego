@@ -269,11 +269,14 @@
 
     function manejarTeclaPresionada(event){
 
+            let teclaPulsada = false
+
             if (event.key === 'e') {
                 
-                audioPrincipio.volume = 0.1
-                hablaEsperanzaTecla.play()
-                
+                teclaPulsada = true
+                audio.volume = 0.4
+                hablaEsperanzaTecla.volume = 0.8
+                hablaEsperanzaTecla.play()     
             }
         
     }
@@ -284,6 +287,14 @@
     botonRestartNode.addEventListener("click", comenzarJuego)
     botonRestart2Node.addEventListener("click", comenzarJuego)
     document.addEventListener('keydown', manejarTeclaPresionada)
+
+    //escuchar cuando termina el audio hablaEsperanza
+
+    hablaEsperanzaTecla.addEventListener("ended", (event)=>{      
+            audio.volume = 1
+
+
+    })
 
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
