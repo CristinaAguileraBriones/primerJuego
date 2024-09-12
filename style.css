@@ -177,33 +177,77 @@ button h3{
 
 /*PANTALLA FINAL 1*/
 
-#cartel-resultado{
+#cartel-resultado {
     background-image: url(./img/ayuso.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
-#cartel-resultado h1{
-    font-family:'titulo-pixel';
- 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
 }
 
-#volver-jugar button{
+#cartel-resultado h1 {
+    padding-top: 0;
+    padding-left: 0;
+    font-family: 'titulo-pixel';
+    margin-bottom: 50px;
+    text-align: center;
+}
 
-    position: relative;
-    right: 250px;
-    margin-top: 150px;
-    margin-bottom: 35px;
+#volver-jugar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#volver-jugar button {
+    
     height: 200px;
     width: 220px;
     border-radius: 80px;
-
 }
 
+#volver-jugar button h3 {
+    margin: 0;
+    text-align: center;
+}
 
+/*PANTALLA 2 GUARDIA CIVIL*/
+
+#cartel-resultado2{
+
+    background-image: url(./img/guardia-civil-fondo1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+
+#cartel-resultado2 h1 {
+    font-family: 'titulo-pixel';
+    font-size: 3rem;
+    color: white; /* Ajusta el color si es necesario */
+    margin-bottom: 20px;
+}
+
+#cartel-resultado2 button {
+    border: 2px solid blue;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    color: black;  /* Color del texto del botón */
+    padding: 20px 40px; /* Tamaño del botón */
+    border-radius: 10px; /* Bordes redondeados */
+}
 
 /*OCULTAR PANTALLAS AL INICIO*/
 
-#contenedor-juego, #cartel-resultado{
+#contenedor-juego, #cartel-resultado, #cartel-resultado2{
 
     display: none;
 }

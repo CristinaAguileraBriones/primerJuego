@@ -7,10 +7,15 @@
     const pantallaJuegoNode = document.querySelector("#pantalla-juego")
     //Pantalla final
     const pantallaFinalNode = document.querySelector("#cartel-resultado")
-
+    const pantallaFinal2Node = document.querySelector("#cartel-resultado2")
     //botones
     const botonStartNode = document.querySelector("#contenedor-principal button")
     const botonRestartNode = document.querySelector("#cartel-resultado button")
+    const botonRestart2Node = document.querySelector("#cartel-resultado2 button")
+    //vidas
+    const vidaUnoNode = document.querySelector("#contenedor-juego .vida1")
+    const vidaDosNode = document.querySelector("#contenedor-juego .vida2")
+    const vidaTresNode = document.querySelector("#contenedor-juego .vida3")
     
     
     
@@ -77,6 +82,7 @@
         eliminarAbuelosFueraDePantalla()
         eliminarGuardiasFueraDePantalla()
         detectarColisionesAbuelos()
+        detectarColisionesGuardiaCivil()
     }
 
     function anadirAbuelos () {
@@ -141,6 +147,24 @@
         }
     }
 
+    function detectarColisionesGuardiaCivil (){
+
+        arrayGuardiaCivil.forEach(cadaGuardia=>{
+
+            if (
+                espe.x < cadaGuardia.x + cadaGuardia.w &&
+                espe.x + espe.w > cadaGuardia.x &&
+                espe.y < cadaGuardia.y + cadaGuardia.h &&
+                espe.y + espe.h > cadaGuardia.y
+            ) {
+
+                gameOverGuardiaCivil()
+
+            }
+
+        })
+    }
+
     function detectarColisionesAbuelos () {
 
         for (let i = arrayAbuelos.length - 1; i >= 0; i--) {
@@ -152,13 +176,21 @@
                 espe.y < cadaAbuelo.y + cadaAbuelo.h &&
                 espe.y + espe.h > cadaAbuelo.y
             ) {
-                numColisionesAbuelos++;
+                numColisionesAbuelos++
     
                 cadaAbuelo.abueloNode.remove();
-    
                 arrayAbuelos.splice(i, 1);
+                if(numColisionesAbuelos === 1){
+
+                    vidaUnoNode.style.display = "none"
+                }else if(numColisionesAbuelos === 2){
+                    vidaUnoNode.style.display = "none"
+                    vidaDosNode.style.display = "none"
+                }
     
                 if (numColisionesAbuelos >= 3) {
+
+                    vidaTresNode.style.display = "none"
                     gameOverTresAbuelos();
                 }
             }
@@ -176,17 +208,37 @@
         arrayAbuelos = []
         arrayGuardiaCivil = []
         pantallaJuegoNode.classList.add("pausa")
-        pantallaJuegoNode = ""
-        contenedorJuegoNode=""
+        pantallaJuegoNode.innerHTML = ""
+        //contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinalNode.style.display = "flex"
 
     }
 
+    function gameOverGuardiaCivil (){
+
+        clearInterval(intervaloJuego)
+        clearInterval(intervaloAbuelos)
+        clearInterval(intervaloGuardias)
+        espe = null
+        arrayAbuelos = []
+        arrayGuardiaCivil = []
+        pantallaJuegoNode.classList.add("pausa")
+        pantallaJuegoNode.innerHTML = ""
+        //contenedorJuegoNode=""
+
+        contenedorJuegoNode.style.display = "none"
+        pantallaFinal2Node.style.display = "flex"
+
+
+    }
+
     //LISTENERS
 
     botonStartNode.addEventListener("click", comenzarJuego)
+    botonRestartNode.addEventListener("click", comenzarJuego)
+    botonRestart2Node.addEventListener("click", comenzarJuego)
 
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
