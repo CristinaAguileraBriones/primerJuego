@@ -222,6 +222,9 @@
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinalNode.style.display = "flex"
+        vidaUnoNode.style.display = "flex"
+        vidaTresNode.style.display = "flex"
+        vidaDosNode.style.display = "flex"
 
     }
 
@@ -239,6 +242,9 @@
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinal2Node.style.display = "flex"
+        vidaUnoNode.style.display = "flex"
+        vidaTresNode.style.display = "flex"
+        vidaDosNode.style.display = "flex"
 
 
     }

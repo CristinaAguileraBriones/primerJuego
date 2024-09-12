@@ -63,13 +63,7 @@
     transition: transform 0.3s ease; /* Suaviza la transición */
 }
 
-#contenedor-principal button:hover {
-    transform: scale(1.2); /* Aumenta el tamaño del botón al 120% */
-}
-
-
-button h3{
-
+#contenedor-principal button h3{
     position: absolute;
     left: 100px;
     bottom: 10px;
@@ -81,6 +75,12 @@ button h3{
         2px -2px 0 #000, /* Borde en la parte superior derecha */
         -2px 2px 0 #000; 
 }
+
+#contenedor-principal button:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del botón al 120% */
+}
+
+
 
 /*Ajuste de imagen*/
 #contenedor-principal img{
@@ -201,6 +201,7 @@ button h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 #volver-jugar button {
@@ -210,10 +211,19 @@ button h3{
     border-radius: 80px;
 }
 
-#volver-jugar button h3 {
-    margin: 0;
-    text-align: center;
-}
+ #cartel-resultado #volver-jugar button h3{
+
+   margin-bottom: 90px;
+   font-family: 'titulo-pixel';
+    color: rgb(110, 110, 219);
+    text-shadow: 
+        2px 2px 0 #000, /* Borde en la parte inferior derecha */
+        -2px -2px 0 #000, /* Borde en la parte superior izquierda */
+        2px -2px 0 #000, /* Borde en la parte superior derecha */
+        -2px 2px 0 #000; 
+ }
+
+
 
 /*PANTALLA 2 GUARDIA CIVIL*/
 
@@ -233,21 +243,32 @@ button h3{
 #cartel-resultado2 h1 {
     font-family: 'titulo-pixel';
     font-size: 3rem;
-    color: white; /* Ajusta el color si es necesario */
+    color: white; 
     margin-bottom: 20px;
 }
 
 #cartel-resultado2 button {
-    border: 2px solid blue;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    color: black;  /* Color del texto del botón */
-    padding: 20px 40px; /* Tamaño del botón */
-    border-radius: 10px; /* Bordes redondeados */
+    background-color:white; 
+    padding: 20px 40px; 
+    border-radius: 10px; 
+}
+
+#cartel-resultado2 button h3{
+
+    margin-bottom: 90px;
+    font-family: 'titulo-pixel';
+    color: rgb(110, 110, 219);
+    text-shadow: 
+        2px 2px 0 #000, /* Borde en la parte inferior derecha */
+        -2px -2px 0 #000, /* Borde en la parte superior izquierda */
+        2px -2px 0 #000, /* Borde en la parte superior derecha */
+        -2px 2px 0 #000; 
+      
 }
 
 /*OCULTAR PANTALLAS AL INICIO*/
 
-#contenedor-juego, #cartel-resultado, #cartel-resultado2{
+#contenedor-juego{
 
     display: none;
 }
