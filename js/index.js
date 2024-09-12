@@ -40,6 +40,10 @@
     //FUNCIONES GENERALES
 
     function comenzarJuego(){
+
+        clearInterval(intervaloJuego)
+        clearInterval(intervaloAbuelos)
+        clearInterval(intervaloGuardias)
         pantallaFinalNode.style.display = "none"
         pantallaFinal2Node.style.display = "none"
         pantallaTituloJuegoNode.style.display = "none"
@@ -235,6 +239,8 @@
         vidaTresNode.style.display = "flex"
         vidaDosNode.style.display = "flex"
 
+        
+
     }
 
     function gameOverGuardiaCivil (){
@@ -255,6 +261,8 @@
         vidaUnoNode.style.display = "flex"
         vidaTresNode.style.display = "flex"
         vidaDosNode.style.display = "flex"
+
+        audio.pause()
 
 
     }
