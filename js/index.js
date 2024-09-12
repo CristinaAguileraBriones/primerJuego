@@ -40,9 +40,11 @@
     //FUNCIONES GENERALES
 
     function comenzarJuego(){
-        
+        pantallaFinalNode.style.display = "none"
+        pantallaFinal2Node.style.display = "none"
         pantallaTituloJuegoNode.style.display = "none"
         contenedorJuegoNode.style.display = "flex"
+
 
         espe = new Espe()
         audio.play()
