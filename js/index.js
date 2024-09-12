@@ -12,6 +12,7 @@
     const botonStartNode = document.querySelector("#contenedor-principal button")
     const botonRestartNode = document.querySelector("#cartel-resultado button")
     const botonRestart2Node = document.querySelector("#cartel-resultado2 button")
+    
     //vidas
     const vidaUnoNode = document.querySelector("#contenedor-juego .vida1")
     const vidaDosNode = document.querySelector("#contenedor-juego .vida2")
@@ -30,6 +31,10 @@
         let intervaloAbuelos = null
         let intervaloGuardias = null
         let numColisionesAbuelos = 0
+        const audio = new Audio('./img/fragmento-himno.mp3')
+        const audioPrincipio = new Audio("./img/musica-principio.mp3")
+        const hablaEsperanzaTecla = new Audio ("./img/espe-no-estuvimos.mp3")
+        
     
 
     //FUNCIONES GENERALES
@@ -40,6 +45,8 @@
         contenedorJuegoNode.style.display = "flex"
 
         espe = new Espe()
+        audio.play()
+       
         
         
        
@@ -204,6 +211,8 @@
         clearInterval(intervaloJuego)
         clearInterval(intervaloAbuelos)
         clearInterval(intervaloGuardias)
+        audio.pause()
+
         espe = null
         arrayAbuelos = []
         arrayGuardiaCivil = []
@@ -234,11 +243,23 @@
 
     }
 
+    function manejarTeclaPresionada(event){
+
+            if (event.key === 'e') {
+                
+                audioPrincipio.volume = 0.1
+                hablaEsperanzaTecla.play()
+                
+            }
+        
+    }
+
     //LISTENERS
 
     botonStartNode.addEventListener("click", comenzarJuego)
     botonRestartNode.addEventListener("click", comenzarJuego)
     botonRestart2Node.addEventListener("click", comenzarJuego)
+    document.addEventListener('keydown', manejarTeclaPresionada)
 
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
@@ -257,6 +278,8 @@
         }
     
     })
+
+    
 
 
 
