@@ -31,9 +31,13 @@
         let intervaloAbuelos = null
         let intervaloGuardias = null
         let numColisionesAbuelos = 0
+
+    // Audios
         const audio = new Audio('./img/fragmento-himno.mp3')
         const audioPrincipio = new Audio("./img/musica-principio.mp3")
         const hablaEsperanzaTecla = new Audio ("./img/espe-no-estuvimos.mp3")
+        const muerteAyuso = new Audio ("./img/muerte-viejos.mp3")
+        const guardiaPillado = new Audio ("./img/guardia-pillado.mp3")
         
     
 
@@ -224,6 +228,8 @@
         clearInterval(intervaloAbuelos)
         clearInterval(intervaloGuardias)
         audio.pause()
+        muerteAyuso.play()
+        muerteAyuso.volume = 1
 
         espe = null
         arrayAbuelos = []
@@ -263,6 +269,7 @@
         vidaDosNode.style.display = "flex"
 
         audio.pause()
+        guardiaPillado.play()
 
 
     }
