@@ -156,20 +156,24 @@
 
     function detectarColisionesGuardiaCivil (){
 
-        arrayGuardiaCivil.forEach(cadaGuardia=>{
-
+        for (let i = arrayGuardiaCivil.length - 1; i >= 0; i--) {
+            let cadaGuardia = arrayGuardiaCivil[i];
+    
             if (
                 espe.x < cadaGuardia.x + cadaGuardia.w &&
                 espe.x + espe.w > cadaGuardia.x &&
                 espe.y < cadaGuardia.y + cadaGuardia.h &&
                 espe.y + espe.h > cadaGuardia.y
             ) {
-
+                
+                cadaGuardia.guardiaNode.remove()
+                arrayGuardiaCivil.splice(i, 1)
+                
                 gameOverGuardiaCivil()
 
             }
 
-        })
+        }
     }
 
     function detectarColisionesAbuelos () {
@@ -184,9 +188,10 @@
                 espe.y + espe.h > cadaAbuelo.y
             ) {
                 numColisionesAbuelos++
-    
-                cadaAbuelo.abueloNode.remove();
-                arrayAbuelos.splice(i, 1);
+
+                arrayAbuelos.splice(i, 1)
+                cadaAbuelo.abueloNode.remove()
+
                 if(numColisionesAbuelos === 1){
 
                     vidaUnoNode.style.display = "none"
@@ -199,6 +204,7 @@
 
                     vidaTresNode.style.display = "none"
                     gameOverTresAbuelos();
+                    numColisionesAbuelos = 0
                 }
             }
         }
