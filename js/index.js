@@ -56,6 +56,8 @@
 
         espe = new Espe()
         audio.play()
+        muerteAyuso.pause()
+        guardiaPillado.pause()
        
         
         
@@ -228,6 +230,7 @@
         clearInterval(intervaloAbuelos)
         clearInterval(intervaloGuardias)
         audio.pause()
+        guardiaPillado.pause()
         muerteAyuso.play()
         muerteAyuso.volume = 1
 
@@ -267,7 +270,8 @@
         vidaUnoNode.style.display = "flex"
         vidaTresNode.style.display = "flex"
         vidaDosNode.style.display = "flex"
-
+        
+        muerteAyuso.pause()
         audio.pause()
         guardiaPillado.play()
 
