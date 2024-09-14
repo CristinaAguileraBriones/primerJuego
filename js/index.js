@@ -19,7 +19,6 @@
     const vidaTresNode = document.querySelector("#contenedor-juego .vida3")
     
     
-    
     // Objetos del juego
 
         let espe = null
@@ -105,30 +104,25 @@
     }
 
     function anadirAbuelos () {
-        let abuelosAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
+        let abuelosAleatorios = Math.floor(Math.random()* (pantallaJuegoNode.offsetHeight - 50))
         
         let abueloAnadido = new Abuelo (abuelosAleatorios)
         arrayAbuelos.push(abueloAnadido)
-        //desfase de tiempo para que no salgan a la vez
-        setTimeout(()=>{
-        let abuelosAleatorios2 = Math.floor(Math.random()* (window.innerHeight - 50))
-        let abueloAnadido2 = new Abuelo (abuelosAleatorios2)
-        arrayAbuelos.push(abueloAnadido2) 
-
-        }, 1000)
+        //desfase de tiempo para que no salgan a la vez: elementos eliminados, añadir mas cuando se resuelva lo de las colisiones
+       
                
     }
 
     function anadirGuardias () {
 
-        let guardiasAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
+        let guardiasAleatorios = Math.floor(Math.random()* (pantallaJuegoNode.offsetHeight - 50))
         
         let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
         arrayGuardiaCivil.push(guardiaAnadido)
 
         setTimeout(()=>{
 
-            let guardiasAleatorios = Math.floor(Math.random()* (window.innerHeight - 50))
+            let guardiasAleatorios = Math.floor(Math.random()* (pantallaJuegoNode.offsetHeight  - 50))
             let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
             arrayGuardiaCivil.push(guardiaAnadido)
     
@@ -168,9 +162,10 @@
 
     function detectarColisionesGuardiaCivil (){
 
-        for (let i = arrayGuardiaCivil.length - 1; i >= 0; i--) {
-            let cadaGuardia = arrayGuardiaCivil[i];
-    
+        
+        arrayGuardiaCivil.forEach((cadaGuardia)=>{
+
+ 
             if (
                 espe.x < cadaGuardia.x + cadaGuardia.w &&
                 espe.x + espe.w > cadaGuardia.x &&
@@ -179,48 +174,58 @@
             ) {
                 
                 cadaGuardia.guardiaNode.remove()
-                arrayGuardiaCivil.splice(i, 1)
+                arrayGuardiaCivil.shift()
                 
                 gameOverGuardiaCivil()
 
             }
 
+        })
+
+
         }
-    }
+
+        
 
     function detectarColisionesAbuelos () {
 
-        for (let i = arrayAbuelos.length - 1; i >= 0; i--) {
-            let cadaAbuelo = arrayAbuelos[i];
+
+            arrayAbuelos.forEach((cadaAbuelo) =>{
+
+                if (
+                    espe.x < cadaAbuelo.x + cadaAbuelo.w &&
+                    espe.x + espe.w > cadaAbuelo.x &&
+                    espe.y < cadaAbuelo.y + cadaAbuelo.h &&
+                    espe.y + espe.h > cadaAbuelo.y
+                    
+                ) {
+                    numColisionesAbuelos++
     
-            if (
-                espe.x < cadaAbuelo.x + cadaAbuelo.w &&
-                espe.x + espe.w > cadaAbuelo.x &&
-                espe.y < cadaAbuelo.y + cadaAbuelo.h &&
-                espe.y + espe.h > cadaAbuelo.y
-            ) {
-                numColisionesAbuelos++
-
-                arrayAbuelos.splice(i, 1)
-                cadaAbuelo.abueloNode.remove()
-
-                if(numColisionesAbuelos === 1){
-
-                    vidaUnoNode.style.display = "none"
-                }else if(numColisionesAbuelos === 2){
-                    vidaUnoNode.style.display = "none"
-                    vidaDosNode.style.display = "none"
-                }
+                    arrayAbuelos.shift()
+                    cadaAbuelo.abueloNode.remove()
     
-                if (numColisionesAbuelos >= 3) {
-
-                    vidaTresNode.style.display = "none"
-                    gameOverTresAbuelos();
-                    numColisionesAbuelos = 0
+                    if(numColisionesAbuelos === 1){
+    
+                        vidaUnoNode.style.display = "none"
+                    }else if(numColisionesAbuelos === 2){
+                        vidaUnoNode.style.display = "none"
+                        vidaDosNode.style.display = "none"
+                    }
+        
+                    if (numColisionesAbuelos >= 3) {
+    
+                        gameOverTresAbuelos();
+                        numColisionesAbuelos = 0
+                    }
                 }
-            }
+
+
+            })
+
+    
+           
         }
-    }
+    
        
 
     function gameOverTresAbuelos (){
@@ -239,7 +244,6 @@
         arrayGuardiaCivil = []
         pantallaJuegoNode.classList.add("pausa")
         pantallaJuegoNode.innerHTML = ""
-        //contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinal2Node.style.display = "none"
@@ -262,7 +266,6 @@
         arrayGuardiaCivil = []
         pantallaJuegoNode.classList.add("pausa")
         pantallaJuegoNode.innerHTML = ""
-        //contenedorJuegoNode=""
 
         contenedorJuegoNode.style.display = "none"
         pantallaFinalNode.style.display = "none"
@@ -280,11 +283,9 @@
 
     function manejarTeclaPresionada(event){
 
-            let teclaPulsada = false
 
             if (event.key === 'e') {
                 
-                teclaPulsada = true
                 audio.volume = 0.4
                 hablaEsperanzaTecla.volume = 0.8
                 hablaEsperanzaTecla.play()     
@@ -309,18 +310,19 @@
 
     const eventoMovimiento = document.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
+     
         if (event.key === "ArrowUp") {
             
-            espe.arribaPad();  // Mover abajo si se presiona la flecha izquierda
+            espe.moverArriba();  // Mover abajo si se presiona la flecha izquierda
         } else if (event.key === "ArrowDown") {
             
-            espe.abajoPad();    // Mover arriba si se presiona la flecha derecha
+            espe.moverAbajo();    // Mover arriba si se presiona la flecha derecha
         }else if (event.key === "ArrowRight"){
-            console.log("atrás")
-            espe.atrasPad()
+
+            espe.moverDerecha()
         }else if (event.key=== "ArrowLeft"){
-            console.log("delante")
-            espe.acelerarPad()
+
+            espe.moverIzquierda()
         }
     
     })
