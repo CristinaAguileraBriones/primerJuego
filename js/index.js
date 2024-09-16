@@ -14,9 +14,9 @@
     const botonRestart2Node = document.querySelector("#cartel-resultado2 button")
     
     //vidas
-    const vidaUnoNode = document.querySelector("#contenedor-juego .vida1")
-    const vidaDosNode = document.querySelector("#contenedor-juego .vida2")
-    const vidaTresNode = document.querySelector("#contenedor-juego .vida3")
+    const vidaUnoNode = document.querySelector("#vida1")
+    const vidaDosNode = document.querySelector("#vida2")
+    const vidaTresNode = document.querySelector("#vida3")
     
     
     // Objetos del juego

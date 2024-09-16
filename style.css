@@ -138,16 +138,23 @@
         -2px 2px 0 #000; 
 
 }
+.contenedor-vidas{
+   
+    position: relative;
+    bottom: 255px;
+    height: 15px; 
+    width: 80px;
+    left: 640px; 
+ 
+}
 
-#contenedor-juego .vida1 img,
-#contenedor-juego .vida2 img,
-#contenedor-juego .vida3 img {
+ #vida1 img,
+ #vida2 img,
+ #vida3 img {
     
     position: relative;
-    bottom: 247px;
     height: 15px; 
     width: 15px;
-    left: 650px; 
     gap: 5px;/*no funciona, ver por qué*/
 
 
