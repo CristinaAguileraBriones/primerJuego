@@ -52,9 +52,9 @@
         pantallaTituloJuegoNode.style.display = "none"
         contenedorJuegoNode.style.display = "flex"
 
-
+        numColisionesAbuelos = 0
         espe = new Espe()
-        audio.play()
+       // audio.play()
         muerteAyuso.pause()
         guardiaPillado.pause()
        
@@ -109,7 +109,6 @@
         let abueloAnadido = new Abuelo (abuelosAleatorios)
         arrayAbuelos.push(abueloAnadido)
         //desfase de tiempo para que no salgan a la vez: elementos eliminados, añadir mas cuando se resuelva lo de las colisiones
-       
                
     }
 
@@ -118,17 +117,7 @@
         let guardiasAleatorios = Math.floor(Math.random()* (pantallaJuegoNode.offsetHeight - 50))
         
         let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
-        arrayGuardiaCivil.push(guardiaAnadido)
-
-        setTimeout(()=>{
-
-            let guardiasAleatorios = Math.floor(Math.random()* (pantallaJuegoNode.offsetHeight  - 50))
-            let guardiaAnadido = new GuardiaCivil (guardiasAleatorios)
-            arrayGuardiaCivil.push(guardiaAnadido)
-    
-            }, 1000)
-
-        
+        arrayGuardiaCivil.push(guardiaAnadido)  
         
     }
 
@@ -173,9 +162,7 @@
                 espe.y + espe.h > cadaGuardia.y
             ) {
                 
-                cadaGuardia.guardiaNode.remove()
-                arrayGuardiaCivil.shift()
-                
+            
                 gameOverGuardiaCivil()
 
             }
@@ -190,7 +177,7 @@
     function detectarColisionesAbuelos () {
 
 
-            arrayAbuelos.forEach((cadaAbuelo) =>{
+            arrayAbuelos.forEach((cadaAbuelo, index) =>{
 
                 if (
                     espe.x < cadaAbuelo.x + cadaAbuelo.w &&
@@ -201,7 +188,7 @@
                 ) {
                     numColisionesAbuelos++
     
-                    arrayAbuelos.shift()
+                    arrayAbuelos.splice(index, 1)
                     cadaAbuelo.abueloNode.remove()
     
                     if(numColisionesAbuelos === 1){
@@ -213,9 +200,9 @@
                     }
         
                     if (numColisionesAbuelos >= 3) {
-    
+                        
                         gameOverTresAbuelos();
-                        numColisionesAbuelos = 0
+                        
                     }
                 }
 
@@ -236,7 +223,7 @@
         clearInterval(intervaloGuardias)
         audio.pause()
         guardiaPillado.pause()
-        muerteAyuso.play()
+        //muerteAyuso.play()
         muerteAyuso.volume = 1
 
         espe = null
@@ -276,7 +263,7 @@
         
         muerteAyuso.pause()
         audio.pause()
-        guardiaPillado.play()
+        //guardiaPillado.play()
 
 
     }

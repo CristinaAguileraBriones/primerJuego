@@ -13,6 +13,7 @@ class GuardiaCivil{
         this.guardiaNode.src = "./img/guardiaCivil(1).png"
         pantallaJuegoNode.append(this.guardiaNode)
 
+        this.guardiaNode.style.height = `${this.h}px`
         this.guardiaNode.style.width =  `${this.w}px`  //se interpola
         this.guardiaNode.style.position = "absolute"     
         this.guardiaNode.style.left = `${this.x}px`

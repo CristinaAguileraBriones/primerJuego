@@ -12,6 +12,7 @@ class Abuelo{
         this.abueloNode.src = "./img/abuelo(1).png"
         pantallaJuegoNode.append(this.abueloNode)
 
+        this.abueloNode.style.height = `${this.h}px`
         this.abueloNode.style.width =  `${this.w}px`  //se interpola
         this.abueloNode.style.position = "absolute"     
         this.abueloNode.style.left = `${this.x}px`
