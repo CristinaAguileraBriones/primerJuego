@@ -298,7 +298,7 @@
     botonStartNode.addEventListener("click", comenzarJuego)
     botonRestartNode.addEventListener("click", comenzarJuego)
     botonRestart2Node.addEventListener("click", comenzarJuego)
-    document.addEventListener('keydown', manejarTeclaPresionada)
+    window.addEventListener('keydown', manejarTeclaPresionada)
 
     //escuchar cuando termina el audio hablaEsperanza
 
@@ -308,7 +308,7 @@
 
     })
 
-    const eventoMovimiento = document.addEventListener("keydown", function(event) {
+    const eventoMovimiento = window.addEventListener("keydown", function(event) {
         // verificar qué tecla fue presionada //function event es algo interno del programa
      
         if (event.key === "ArrowUp") {

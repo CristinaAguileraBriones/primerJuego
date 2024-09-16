@@ -29,29 +29,29 @@ class Espe {
     }
 
     moverAbajo() {
-        if (this.y + this.espeNode.offsetHeight + this.speedMovement < pantallaJuegoNode.offsetHeight) {
-            this.y += this.speedMovement;
+        if (this.y + this.espeNode.offsetHeight + this.speedMovement <= pantallaJuegoNode.offsetHeight) {
+            this.y += this.speedMovement
             this.espeNode.style.top = `${this.y}px`;
         }
     }
 
     moverArriba() {
         if (this.y - this.speedMovement > 0) {
-            this.y -= this.speedMovement;
+            this.y -= this.speedMovement
             this.espeNode.style.top = `${this.y}px`;
         }
     }
 
     moverIzquierda() {
         if (this.x - this.speedMovement > 0) {
-            this.x -= this.speedMovement;
+            this.x -= this.speedMovement
             this.espeNode.style.left = `${this.x}px`;
         }
     }
 
     moverDerecha() {
-        if (this.x + this.espeNode.offsetWidth + this.speedMovement < pantallaJuegoNode.offsetWidth) {
-            this.x += this.speedMovement;
+        if (this.x + this.espeNode.offsetWidth + this.speedMovement <= pantallaJuegoNode.offsetWidth) {
+            this.x += this.speedMovement
             this.espeNode.style.left = `${this.x}px`;
         }
     }

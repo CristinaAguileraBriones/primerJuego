@@ -104,6 +104,22 @@
     align-items: center; /* Centrar verticalmente */
     background-color: rgb(185, 23, 23); 
     position: absolute;
+    
+#pantalla-juego{
+    
+    justify-content: center;
+    align-items: center;
+    border: white 2px solid;
+    height: 85vh;
+    width: 215vh;
+    right: 55px;
+    pointer-events: none;
+    position: relative;
+    background-image: url(./img/carretera.png);
+    overflow: hidden;
+    animation: moverFondo 5s linear infinite;
+
+}
 
 }
 #contenedor-juego h4 {
@@ -138,21 +154,6 @@
      
 }
 
-#pantalla-juego{
-    
-    justify-content: center;
-    align-items: center;
-    border: white 2px solid;
-    height: 85vh;
-    width: 215vh;
-    right: 55px;
-    pointer-events: none;
-    position: relative;
-    background-image: url(./img/carretera.png);
-    overflow: hidden;
-    animation: moverFondo 5s linear infinite;
-
-}
 #contenedor-juego::before {
     content: '☆\A☆\A☆'; /* Usar \A para salto de línea */
     white-space: pre; /* Mantener los saltos de línea */
