@@ -54,7 +54,7 @@
 
         numColisionesAbuelos = 0
         espe = new Espe()
-       // audio.play()
+        audio.play()
         muerteAyuso.pause()
         guardiaPillado.pause()
        
@@ -223,7 +223,7 @@
         clearInterval(intervaloGuardias)
         audio.pause()
         guardiaPillado.pause()
-        //muerteAyuso.play()
+        muerteAyuso.play()
         muerteAyuso.volume = 1
 
         espe = null
@@ -263,7 +263,7 @@
         
         muerteAyuso.pause()
         audio.pause()
-        //guardiaPillado.play()
+        guardiaPillado.play()
 
 
     }
