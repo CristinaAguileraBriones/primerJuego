@@ -58,7 +58,7 @@
     width: 220px;
     border-radius: 80px;
     font-size: 1rem; /* Ajusta el tamaño del texto del botón */
-    background-image: url(./img/rana-granados-boton.png);
+    background-image: url(./img/boton_start.png);
     transform-origin: center; /* Cambia esto si el origen no es el centro */
     transition: transform 0.3s ease; /* Suaviza la transición */
 }
