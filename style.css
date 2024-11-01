@@ -34,7 +34,7 @@
         2px -2px 0 #000, /* Borde en la parte superior derecha */
         -2px 2px 0 #000; 
     text-align: center; 
-    background-image: url(https://sevilla.abc.es/Media/201404/03/aguirre-coche--644x362.jpg);
+    background-image: url("./img/background.png");
     background-color: lightblue; 
     background-repeat: no-repeat;
     background-position: center;
