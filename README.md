@@ -1,4 +1,4 @@
-# Community of Madrid Race: Extreme Version
+# FORZA CHORIZON: Extreme Version
 
 [Link to the game](https://cristinaaguilerabriones.github.io/primerJuego/)
 
